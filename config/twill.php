@@ -1,6 +1,25 @@
 <?php
 
 return [
+    'block_editor' => [
+        'use_twill_blocks' => [],
+        'crops' => [
+            'highlight' => [
+                'desktop' => [
+                    [
+                        'name' => 'desktop',
+                        'ratio' => 16 / 9,
+                    ],
+                ],
+                'mobile' => [
+                    [
+                        'name' => 'mobile',
+                        'ratio' => 1,
+                    ],
+                ],
+            ],
+        ],
+    ],
     'media_library' => [
         'disk' => 'twill_media_library',
         'endpoint_type' => env('MEDIA_LIBRARY_ENDPOINT_TYPE', 'local'),
