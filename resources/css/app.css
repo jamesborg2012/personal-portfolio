@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom Styling */
+
+.text-and-image-block .text-and-image-content .content-text p:not(:first-of-type) {
+    margin-top: 2.5rem;
+}
