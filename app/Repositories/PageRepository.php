@@ -11,7 +11,7 @@ use App\Models\Page;
 
 class PageRepository extends ModuleRepository
 {
-    use HandleBlocks, HandleSlugs, HandleMedias, HandleRevisions;
+    use HandleBlocks, HandleSlugs, HandleMedias;
 
     public function __construct(Page $model)
     {
