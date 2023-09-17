@@ -7,7 +7,7 @@
 <body>
     <x-menu/>
 <div>
-   <div class="max-w-2xl mx-auto">
+   <div class="px-16 mx-auto">
     {!! $item->renderBlocks() !!}
    </div>
 </div>
