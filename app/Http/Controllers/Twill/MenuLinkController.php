@@ -8,6 +8,8 @@ use A17\Twill\Services\Listings\TableColumns;
 use A17\Twill\Services\Forms\Fields\Input;
 use A17\Twill\Services\Forms\Form;
 use A17\Twill\Http\Controllers\Admin\NestedModuleController as BaseModuleController;
+use A17\Twill\Services\Forms\Fields\Browser;
+use App\Models\Page;
 
 class MenuLinkController extends BaseModuleController
 {
@@ -31,24 +33,8 @@ class MenuLinkController extends BaseModuleController
     {
         $form = parent::getForm($model);
 
-        $form->add(
-            Input::make()->name('description')->label('Description')
-        );
+        $form->add(Browser::make()->name('page')->modules([Page::class]));
 
         return $form;
-    }
-
-    /**
-     * This is an example and can be removed if no modifications are needed to the table.
-     */
-    protected function additionalIndexTableColumns(): TableColumns
-    {
-        $table = parent::additionalIndexTableColumns();
-
-        $table->add(
-            Text::make()->field('description')->title('Description')
-        );
-
-        return $table;
     }
 }
