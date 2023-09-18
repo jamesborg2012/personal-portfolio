@@ -8,6 +8,7 @@ use A17\Twill\Services\Listings\TableColumns;
 use A17\Twill\Services\Forms\Fields\Input;
 use A17\Twill\Services\Forms\Form;
 use A17\Twill\Http\Controllers\Admin\ModuleController as BaseModuleController;
+use A17\Twill\Services\Forms\Fields\BlockEditor;
 
 class SkillController extends BaseModuleController
 {
@@ -29,8 +30,12 @@ class SkillController extends BaseModuleController
     {
         $form = parent::getForm($model);
 
+        // $form->add(
+        //     Input::make()->name('description')->label('Description')
+        // );
+
         $form->add(
-            Input::make()->name('description')->label('Description')
+            BlockEditor::make()
         );
 
         return $form;
