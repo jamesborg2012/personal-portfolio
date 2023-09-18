@@ -18,6 +18,7 @@ class SkillController extends BaseModuleController
     protected function setUpController(): void
     {
         $this->disablePermalink();
+        $this->enableReorder();
     }
 
     /**
