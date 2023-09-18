@@ -9,6 +9,7 @@ use A17\Twill\Services\Forms\Fields\Input;
 use A17\Twill\Services\Forms\Form;
 use A17\Twill\Http\Controllers\Admin\ModuleController as BaseModuleController;
 use A17\Twill\Services\Forms\Fields\BlockEditor;
+use A17\Twill\Services\Forms\Fields\Medias;
 
 class SkillController extends BaseModuleController
 {
@@ -30,12 +31,16 @@ class SkillController extends BaseModuleController
     {
         $form = parent::getForm($model);
 
-        // $form->add(
-        //     Input::make()->name('description')->label('Description')
-        // );
+        $form->add(
+            Medias::make()->name('cover')->label('Cover Image')
+        );
 
         $form->add(
-            BlockEditor::make()
+            Input::make()->name('description')->label('Description')
+        );
+
+        $form->add(
+            Input::make()->name('experience')->label('Experience')
         );
 
         return $form;
