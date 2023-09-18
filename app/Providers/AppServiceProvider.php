@@ -30,6 +30,10 @@ class AppServiceProvider extends ServiceProvider
         );
 
         TwillNavigation::addLink(
+            NavigationLink::make()->forModule('skills')->title('Skills')
+        );
+
+        TwillNavigation::addLink(
             NavigationLink::make()->forModule('menuLinks')->title('Menu')
         );
 
