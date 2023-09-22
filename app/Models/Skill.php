@@ -17,6 +17,7 @@ class Skill extends Model implements Sortable
         'title',
         'description',
         'experience',
+        'icon',
         'position',
     ];
 

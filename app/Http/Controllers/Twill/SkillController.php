@@ -52,6 +52,10 @@ class SkillController extends BaseModuleController
             Input::make()->name('experience')->label('Experience')
         );
 
+        $form->add(
+            Input::make()->name('icon')->label('Font Awsome Icon Class')
+        );
+
         return $form;
     }
 
@@ -69,9 +73,12 @@ class SkillController extends BaseModuleController
         return $table;
     }
 
+    /**
+     * Returns Skills posts using the provided IDs
+     */
     public function getSkillsById(array $skill_ids)
     {
-        $skills = Skill::find($skill_ids);
+        $skills = Skill::find($skill_ids)->sortBy('position');
 
         if (empty($skills)) {
             return [];
@@ -80,20 +87,25 @@ class SkillController extends BaseModuleController
         $skills_return = [];
 
         foreach ($skills as $skill) {
+            $mediaUrl = '';
 
             /** @var Collection $mediaCollection */
             $mediaCollection = $skill->medias;
-            $mediaModel = $mediaCollection->first();
 
-            if (env('MEDIA_LIBRARY_ENDPOINT_TYPE') == 'local') {
-                $mediaUrl = env('APP_URL') . '/storage/uploads/' . $mediaModel->uuid;
-            } elseif (env('MEDIA_LIBRARY_ENDPOINT_TYPE') == 's3' && env('MEDIA_LIBRARY_IMAGE_SERVICE') == 'A17\Twill\Services\MediaLibrary\Imgix') {
-                $config = new Config();
-                $imgix = new Imgix($config);
-                $mediaUrl = $imgix->getRawUrl($mediaModel->id);
+            //Get images if set
+            if ($mediaCollection->isNotEmpty()) {
+                $mediaModel = $mediaCollection->first();
+
+                if (env('MEDIA_LIBRARY_ENDPOINT_TYPE') == 'local') {
+                    $mediaUrl = env('APP_URL') . '/storage/uploads/' . $mediaModel->uuid;
+                } elseif (env('MEDIA_LIBRARY_ENDPOINT_TYPE') == 's3' && env('MEDIA_LIBRARY_IMAGE_SERVICE') == 'A17\Twill\Services\MediaLibrary\Imgix') {
+                    $config = new Config();
+                    $imgix = new Imgix($config);
+                    $mediaUrl = $imgix->getRawUrl($mediaModel->id);
+                }
             }
 
-            $skills_return[] = ['title' => $skill->title, 'experience' => $skill->experience, 'image' => $mediaUrl];
+            $skills_return[] = ['title' => $skill->title, 'experience' => $skill->experience, 'icon' => $skill->icon, 'image' => $mediaUrl];
         }
 
         return $skills_return;
