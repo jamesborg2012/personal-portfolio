@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <title>#madewithtwill website</title>
-    @vite('resources/css/app.css')
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
 <div>

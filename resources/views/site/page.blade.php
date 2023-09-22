@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <title>{{ $item->title }}</title>
-    @vite('resources/css/app.css')
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
     <x-menu/>

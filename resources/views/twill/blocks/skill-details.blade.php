@@ -2,9 +2,9 @@
 @twillBlockIcon('text')
 @twillBlockGroup('app')
 
-<x-twill::medias
-    name="highlight"
-    label="Image"
+<x-twill::input
+    name="fa-icon"
+    label="Font Awesome Icon"
 />
 
 <x-twill::wysiwyg
