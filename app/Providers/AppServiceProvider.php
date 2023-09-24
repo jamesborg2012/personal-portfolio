@@ -40,5 +40,13 @@ class AppServiceProvider extends ServiceProvider
         TwillAppSettings::registerSettingsGroup(
             SettingsGroup::make()->name('homepage')->label('Homepage')
         );
+
+        TwillAppSettings::registerSettingsGroup(
+            SettingsGroup::make()->name('footer-left')->label('Left Footer')
+        );
+
+        TwillAppSettings::registerSettingsGroup(
+            SettingsGroup::make()->name('footer-right')->label('Right Footer')
+        );
     }
 }
