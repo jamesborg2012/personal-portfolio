@@ -1,4 +1,4 @@
-@twillBlockTitle('Left Footer')
+@twillBlockTitle('Right Footer')
 @twillBlockIcon('text')
 @twillBlockGroup('app')
 
@@ -6,4 +6,11 @@
     name="follow"
     label="Follow Text"
     :translated="false"
+/>
+
+<x-twill::browser
+    label="Select Links"
+    module-name="personalLinks"
+    name="personalLink"
+    :max=3
 />

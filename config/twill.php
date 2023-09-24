@@ -18,6 +18,20 @@ return [
                     ],
                 ],
             ],
+            'banner' => [
+                'desktop' => [
+                    [
+                        'name' => 'desktop',
+                        'ratio' => 16 / 9,
+                    ],
+                ],
+                'mobile' => [
+                    [
+                        'name' => 'mobile',
+                        'ratio' => 1,
+                    ],
+                ],
+            ],
         ],
     ],
     'media_library' => [

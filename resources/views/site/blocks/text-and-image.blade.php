@@ -1,11 +1,11 @@
-<div class="text-and-image-block">
-    <h2 class="mb-10 text-4xl leading-relaxed text-center">{{ $block->input('title') }}</h2>
+<div class="py-10 shadow-2xl rounded-2xl text-and-image-block">
+    <h2 class="mb-10 text-4xl leading-relaxed text-center text-white">{{ $block->input('title') }}</h2>
     <div class="grid grid-cols-2 gap-10 text-and-image-content">
         @if ($block->input('image-position') == 'left')
             <div class="items-center px-10 py-8 mx-auto border-r-2 image-left">
                 <img src="{{ $block->image('highlight', 'mobile') }}" />
             </div>
-            <div class="py-8 mx-auto content-text">
+            <div class="py-8 pr-10 mx-auto text-white content-text">
                 {!! $block->input('text') !!}
             </div>
         @else
