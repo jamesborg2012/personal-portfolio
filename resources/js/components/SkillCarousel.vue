@@ -30,7 +30,6 @@ export default defineComponent({
     components: {
         Carousel,
         Slide,
-        Navigation,
     },
     data: () => ({
         skills: null,
@@ -73,13 +72,11 @@ export default defineComponent({
     align-items: center;
 }
 
-.carousel__slide {
-    padding: 10px;
+.carousel__item i {
+    color: #fff !important;
 }
 
-.carousel__prev,
-.carousel__next {
-    box-sizing: content-box;
-    border: 5px solid white;
+.carousel__slide {
+    padding: 10px;
 }
 </style>

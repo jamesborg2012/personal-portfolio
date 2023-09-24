@@ -7,11 +7,11 @@
 </head>
 
 <body>
-    <div>
-        <div class="px-16 mx-auto">
+    <div class='main-container'>
+        <div class="px-16 pt-10 mx-auto">
             {!! $item->renderBlocks() !!}
         </div>
-        <div class="grid grid-cols-2 px-16 py-8 mx-auto footer">
+        <footer class="grid grid-cols-2 px-16 py-8 mx-auto mt-10 border-t-2">
             <x-left-footer />
             <x-right-footer />
         </div>
