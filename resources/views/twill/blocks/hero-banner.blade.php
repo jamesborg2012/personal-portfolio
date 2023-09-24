@@ -2,25 +2,17 @@
 @twillBlockIcon('text')
 @twillBlockGroup('app')
 
+<x-twill::medias
+    name="banner"
+    label="Banner Image"
+/>
+
 <x-twill::input
     name="title"
     label="Title"
-    :translated="false"
 />
 
-<x-twill::wysiwyg
-    name="text"
-    label="Text"
-    placeholder="Text"
-    :toolbar-options="[
-        'bold',
-        'italic',
-        ['list' => 'bullet'],
-        ['list' => 'ordered'],
-        [ 'script' => 'super' ],
-        [ 'script' => 'sub' ],
-        'link',
-        'clean'
-    ]"
-    :translated="false"
+<x-twill::input
+    name="subtitle"
+    label="Subtitle"
 />

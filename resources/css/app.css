@@ -28,3 +28,11 @@ footer {
 .text-and-image-block .text-and-image-content .content-text p:not(:first-of-type) {
     margin-top: 2.5rem;
 }
+
+.hero-banner-block {
+    height: 850px;
+}
+
+.hero-banner-block .hero-banner-container .hero-banner-text {
+    transform: translate(-50%, -50%);
+}
