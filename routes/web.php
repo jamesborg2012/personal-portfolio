@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\PageDisplayController;
+use App\Http\Controllers\Twill\SkillController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('homepage');
+// });
+
+Route::get('/', [\App\Http\Controllers\PageDisplayController::class, 'home'])->name('frontend.home');
+Route::get('{slug}', [\App\Http\Controllers\PageDisplayController::class, 'show'])->name('frontend.page');
+
+Route::get('/skills/get-by-ids-string/{skillstring}', [SkillController::class, 'getSkillsByIdSerialized']);
